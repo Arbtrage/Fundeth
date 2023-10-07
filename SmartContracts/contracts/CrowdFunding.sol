@@ -14,7 +14,10 @@ contract CrowdFunding {
         uint256[] donations;
     }
 
+
+
     mapping(uint256 => Campaign) public campaigns;
+    mapping(address => Campaign[]) public donatedCampaigns;
 
     uint256 public numberOfCampaigns = 0;
 
@@ -49,6 +52,8 @@ contract CrowdFunding {
         if(sent) {
             campaign.amountCollected = campaign.amountCollected + amount;
         }
+
+        donatedCampaigns[msg.sender].push(campaign);
     }
 
     function getDonators(uint256 _id) view public returns (address[] memory, uint256[] memory) {
@@ -65,6 +70,10 @@ contract CrowdFunding {
         }
 
         return allCampaigns;
+    }
+
+    function myDonations() public view returns (Campaign[] memory){
+        return donatedCampaigns[msg.sender];
     }
     function getCampaignsByOwner(address ownerAddress) public view returns (Campaign[] memory) {
         uint256 ownedCampaignsCount = 0;
