@@ -8,7 +8,7 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
-
+import Checkout from "./Checkout.jsx";
 import { SearchIcon } from "./SearchIcon";
 import { useNavigate } from "react-router-dom";
 
@@ -16,6 +16,8 @@ import { useStateContext } from "../Context";
 import { CustomButton } from "./";
 
 export default function Navbar() {
+ 
+
   const navigate = useNavigate();
   const { connect, address } = useStateContext();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -37,10 +39,8 @@ export default function Navbar() {
       </div>
 
       <div className="sm:flex hidden flex-row items-center justify-end gap-4">
-        {address && (
-          <Button onPress={onOpen}>Token : 0</Button>
-        )}
-        
+        {address && <Button onPress={onOpen}>Token : 0</Button>}
+
         {address && (
           <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
             <ModalContent>
@@ -50,7 +50,7 @@ export default function Navbar() {
                     Buy Tokens
                   </ModalHeader>
                   <ModalBody>
-                    {/* Modal body content */}
+                    <Checkout/>
                   </ModalBody>
                   <ModalFooter>
                     <Button color="danger" variant="light" onPress={onClose}>

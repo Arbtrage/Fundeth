@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 // import { CampaignDetails, CreateCampaign, Home, Profile } from './pages';
+import CreateCampaign from './Pages/CreateCampaign';
 import Home from './Pages/Home';
+import Profile from './Pages/Profile';
 import { Sidebar, Navbar } from './Components';
 
 const App = () => {
@@ -15,9 +17,9 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/create-campaign" element={<CreateCampaign />} />
-          <Route path="/campaign-details/:id" element={<CampaignDetails />} /> */}
+          {/* <Route path="/campaign-details/:id" element={<CampaignDetails />} /> */}
         </Routes>
       </div>
     </div>
