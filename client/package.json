@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.1.13",
+    "@stripe/react-stripe-js": "^2.3.1",
+    "@stripe/stripe-js": "^2.1.7",
     "@thirdweb-dev/react": "^3.16.4",
     "@thirdweb-dev/sdk": "^3.10.66",
     "autoprefixer": "^10.4.16",
