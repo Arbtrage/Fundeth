@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import CreateCampaign from './Pages/CreateCampaign';
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
+import Campaign from "./Pages/Campaign";
 import { Sidebar, Navbar } from './Components';
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-campaign" element={<CreateCampaign />} />
-          {/* <Route path="/campaign-details/:id" element={<CampaignDetails />} /> */}
+          <Route path="/campaign-details/:id" element={<Campaign />} />
         </Routes>
       </div>
     </div>

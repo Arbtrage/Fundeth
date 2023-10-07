@@ -1,52 +1,42 @@
-import { useState, useEffect } from "react";
+import axios from "axios";
+import {
+  CardNumberElement,
+  CardExpiryElement,
+  CardCvcElement,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
 
-const ProductDisplay = () => (
-  <section>
-    <div className="product">
-      <img
-        src="https://i.imgur.com/EHyR2nP.png"
-        alt="The cover of Stubborn Attachments"
-      />
-      <div className="description">
-      <h3>Stubborn Attachments</h3>
-      <h5>$20.00</h5>
-      </div>
-    </div>
-    <form action="/create-checkout-session" method="POST">
-      <button type="submit">
-        Checkout
-      </button>
-    </form>
-  </section>
-);
-
-const Message = ({ message }) => (
-  <section>
-    <p>{message}</p>
-  </section>
-);
-
-export default function Checkout() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
-
-    if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
-    }
-
-    if (query.get("canceled")) {
-      setMessage(
-        "Order canceled -- continue to shop around and checkout when you're ready."
+const CheckoutPage = () => {
+  const stripe = useStripe();
+  const elements = useElements();
+  const handlePayment = async () => {
+    event.preventDefault();
+    const response = await axios.post(`http://localhost:5000/api/stripe/pay`, {
+      amount: 200,
+    });
+    if (response.status === 200) {
+      const confirmPayment = await stripe.confirmCardPayment(
+        response.data.client_secret,
+        {
+          payment_method: {
+            card: elements.getElement(CardNumberElement),
+          },
+        }
       );
+      if (confirmPayment.paymentIntent.status === "succeeded") {
+        console.log("payment confirmed");
+      }
     }
-  }, []);
-
-  return message ? (
-    <Message message={message} />
-  ) : (
-    <ProductDisplay />
+  };
+  return (
+    <form onSubmit={handlePayment}>
+      <CardNumberElement />
+      <CardExpiryElement />
+      <CardCvcElement />
+      <button>Confirm Payment</button>
+    </form>
   );
-}
+};
+
+export default CheckoutPage
