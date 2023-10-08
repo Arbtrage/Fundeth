@@ -30,6 +30,14 @@ The concept behind this project is to use cryptocurrency as a means of crowdfund
 
 "FundETH" aims to reshape the blockchain landscape by providing a secure, transparent, and verifiable platform for organizations to establish and maintain their legitimacy in the blockchain ecosystem.
 
+## ScreenShots
+
+![image](https://github.com/Arbtrage/Fundeth/assets/100552235/10353533-f122-49d3-aca1-f6a0c0b7eba1)
+![image](https://github.com/Arbtrage/Fundeth/assets/100552235/38f3e29e-8cc4-4207-a7ac-79de4db268d2)
+![image](https://github.com/Arbtrage/Fundeth/assets/100552235/5e2f3019-fc48-47df-b4b2-b6cd5e544169)
+<img width="960" alt="image" src="https://github.com/Arbtrage/Fundeth/assets/100552235/bb4531fa-6025-4688-be53-e90f5f5c324d">
+![image](https://github.com/Arbtrage/Fundeth/assets/100552235/c6d5cc9e-d397-473c-b752-09fa08334f9e)
+
 
 
 ## Features
