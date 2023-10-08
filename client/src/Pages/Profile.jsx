@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-import { DisplayCampaigns, Navbar } from '../Components';
+import { DisplayCampaigns } from '../Components';
 import { useStateContext } from '../Context'
 
 
@@ -12,14 +12,14 @@ import { HiDotsVertical } from 'react-icons/hi'
 
 
 const style = {
-  bannerImageContainer: `h-[35vh] w-50 overflow-hidden flex justify-center items-left`,
+  bannerImageContainer: `h-[35vh] w-50 overflow-hidden flex items-center`,
   bannerImage: `w-full object-cover rounded-2xl`,
   infoContainer: `w-screen px-4 flex flex-col justify-center items-center`,
   midRow: `w-full flex justify-center text-white`,
   endRow: `w-full flex justify-end text-white`,
   profileImg: `w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]`,
   socialIconsContainer: `flex text-3xl mb-[-2rem]`,
-  socialIconsWrapper: `w-44`,
+  socialIconsWrapper: ``,
   socialIconsContent: `flex container justify-between text-[1.4rem] border-2 rounded-lg px-2`,
   socialIcon: `my-2`,
   divider: `border-r-2`,
@@ -58,8 +58,7 @@ const Profile = () => {
 
   return (
 
-    <div className='overflow-hidden max-w-screen-lg mx-auto p-4'>
-      {/* <Navbar /> */}
+    <div className='overflow-hidden flex flex-col items-center'>
       <div className={style.bannerImageContainer}>
         <img
           className={style.bannerImage}

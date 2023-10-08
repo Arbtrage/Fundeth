@@ -1,9 +1,8 @@
 import { useState } from "react";
-// import Image from "next/image";
 import { Link, useNavigate } from "react-router-dom";
 import { navlinks } from "../constants/index.jsx";
 import { logo, logout } from "../assets";
-import { Avatar, Image } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/react";
 
 const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
   <div

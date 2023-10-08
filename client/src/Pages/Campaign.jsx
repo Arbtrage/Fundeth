@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 
 import { useStateContext } from '../Context';
 import { CountBox, CustomButton, Loader } from '../Components';
